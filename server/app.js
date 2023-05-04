@@ -29,6 +29,7 @@ app.use(apiRoot, apiRouter);
 app.use(studentRoot, studentRouter);
 app.use("/health", (_, res) => res.sendStatus(200));
 app.use(clientRouter(apiRoot));
+app.use(clientRouter(studentRoot));
 
 app.use(logErrors());
 

@@ -1,26 +1,26 @@
 import { Router } from "express";
-import { query } from "./db.js";
+import query from "./db.js";
 import logger from "./utils/logger";
 
 const router = Router();
 
 router.post('/table', (req, res) => {
 	query
-		.query('CREATE TABLE IF NOT EXISTS students (id serial PRIMARY KEY, firstName VARCHAR(50) NOT NULL, lastName VARCHAR(50) NOT NULL, email VARCHAR(150) NOT NULL, phoneNumber INTEGER  NOT NULL)')
+		.query('CREATE TABLE IF NOT EXISTS students (id serial PRIMARY KEY, firstName VARCHAR(50) NOT NULL, lastName VARCHAR(50) NOT NULL, dateOfBirth DATE NOT NULL, email VARCHAR(150) NOT NULL, phoneNumber INTEGER  NOT NULL, passwordStudent VARCHAR (10))')
 		.then((result) => res.status(200).json(result.command))
 		.catch((error) => console.error(error));
 });
 router.post('/new', (req, res) =>{
 	const {firstName, lastName, dateOfBirth, email, phoneNumber, password} = req.body;
-	const query = 'INSERT INTO students (firstName, lastName, dateOfBirth, email, phoneNumber, password ) VALUES($1, $2, $3, $4, $5, $6)'
+	const Query = 'INSERT INTO students (firstName, lastName, dateOfBirth, email, phoneNumber, passwordStudent ) VALUES($1, $2, $3, $4, $5, $6)'
 	query
-		.query(query, [firstName, lastName, dateOfBirth, email, phoneNumber, password])
+		.query(Query, [firstName, lastName, dateOfBirth, email, phoneNumber, password])
 		.then(() => res.status(200).json({message: 'Student loaded successfully'}))
-		.catch((error) => res.status(500).json({error: 'Information loaded incorrectly' + error.message}));
+		.catch((error) => res.status(500).json({error: 'Information loaded incorrectly - ' + error.message}));
 });
 router.get('/', (req, res) => {
 	query
-        .query('SELECT firstName, lastName, dateOfBirth, email, phoneNumber FROM students')
+        .query('SELECT id, firstName, lastName, dateOfBirth, email, phoneNumber FROM students')
 	  	.then((result) => res.json(result.rows))
 		.catch((error) => res.status(500).json(error));
 });
@@ -36,7 +36,7 @@ router.delete('/:id', (req, res) => {
 	query
 		.query('DELETE FROM students WHERE id=$1', [id])
 		.then(() => {
-			pool.query('COMMIT', (err) => {
+			query.query('COMMIT', (err) => {
 				if (err){
 					console.error('Error commiting delete', err.stack);
 					res.send(500).json(err);
@@ -52,7 +52,7 @@ router.put('/:id', (req, res) => {
 	query 
 		.query('UPDATE students SET firstName=? lastName=? dateOfBirth=?, email=?, phoneNumber = ? WHERE id=$1', [id, firstName, lastName, dateOfBirth, email, phoneNumber])
 		.then(() => {
-			pool.query('COMMIT', (err) => {
+			query.query('COMMIT', (err) => {
 				if (err){
 					console.error('Error in update of details', err.stack);
 					res.send(500).json(err);
@@ -62,7 +62,7 @@ router.put('/:id', (req, res) => {
 			})
 		})
 		.catch((error) => {
-			pool.query('ROLLBACK', (err) => {
+			query.query('ROLLBACK', (err) => {
 				if (err) {
 					console.error('Rolling back the transaction', err.stack);
 				} 
