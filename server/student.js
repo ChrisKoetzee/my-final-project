@@ -1,16 +1,16 @@
 import { Router } from "express";
-import {query} from "./db.js";
-// import logger from "./utils/logger";
+import { query } from "./db.js";
+import logger from "./utils/logger";
 
 const router = Router();
 
-router.post('/', (req, res) => {
+router.post('/table', (req, res) => {
 	query
 		.query('CREATE TABLE IF NOT EXISTS students (id serial PRIMARY KEY, firstName VARCHAR(50) NOT NULL, lastName VARCHAR(50) NOT NULL, email VARCHAR(150) NOT NULL, phoneNumber INTEGER  NOT NULL)')
 		.then((result) => res.status(200).json(result.command))
 		.catch((error) => console.error(error));
 });
-router.post('/', (req, res) =>{
+router.post('/new', (req, res) =>{
 	const {firstName, lastName, dateOfBirth, email, phoneNumber, password} = req.body;
 	const query = 'INSERT INTO students (firstName, lastName, dateOfBirth, email, phoneNumber, password ) VALUES($1, $2, $3, $4, $5, $6)'
 	query
