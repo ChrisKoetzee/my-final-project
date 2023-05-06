@@ -22,14 +22,14 @@ router.get('/', (req, res) => {
 	query
         .query('SELECT id, fullNames, surname, dateOfBirth, email, gender, phoneNumber FROM students')
 	  	.then((result) => res.json(result.rows))
-		.catch((error) => res.status(500).json(error));
+		.catch((error) => res.status(400).json(error));
 });
 router.get('/:id', (req, res) => {
 	const id = req.params.id;
 	query
         .query('SELECT fullNames, surname, dateOfBirth, email, gender, phoneNumber FROM students WHERE id=$1', [id])
 	  	.then((result) => res.json(result.rows))
-		.catch((error) => res.status(500).json(error));
+		.catch((error) => res.status(400).json(error));
 });
 router.delete('/:id', (req, res) => {
 	const id = req.params.id;
@@ -39,7 +39,7 @@ router.delete('/:id', (req, res) => {
 			query.query('COMMIT', (err) => {
 				if (err){
 					console.error('Error commiting delete', err.stack);
-					res.send(500).json(err);
+					res.send(400).json(err);
 				} else {
 					res.status(200).json({error: 'Successfully removed'})
 				}
@@ -55,7 +55,7 @@ router.put('/:id', (req, res) => {
 			query.query('COMMIT', (err) => {
 				if (err){
 					console.error('Error in update of details', err.stack);
-					res.send(500).json(err);
+					res.send(400).json(err);
 				} else {
 					res.send(200).json({message: 'Student details Updated'});
 				}
