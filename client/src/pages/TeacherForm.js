@@ -4,25 +4,23 @@ import {Button, Form, Container, Col, Row} from "react-bootstrap";
 
 const TeacherForm = () => {
     return (
-        <Container className="d-flex justify-content-center">
+        <Container className="d-flex justify-content-center" fluid="md">
             {/* <Template /> */}
             <Form>
                 <h1>Register A Teacher</h1>
                 <p>Please enter the details below to register a teacher</p>
                     
                     <Row>
-                        <Col className="col-sm-6">
+                        <Col xs={12} sm={6}>
                             <Form.Group className="mb-3" controlId="text">
                                 <Form.Label>Full first names</Form.Label>
                                 <Form.Control type="text" placeholder="Enter full first names" />
-                                <Form.Text className="text-muted"></Form.Text>
                             </Form.Group>
                         </Col>
-                        <Col className="col-sm-6">
+                        <Col xs={12} sm={6}>
                             <Form.Group className="mb-3" controlId="text">
                                 <Form.Label>Surname</Form.Label>
                                 <Form.Control type="text" placeholder="Enter Surname" />
-                                <Form.Text className="text-muted"></Form.Text>
                             </Form.Group>
                         </Col>
                     </Row>
@@ -30,13 +28,11 @@ const TeacherForm = () => {
                 <Form.Group className="mb-3" controlId="email">
                     <Form.Label>Email Address</Form.Label>
                     <Form.Control type="text" placeholder="Enter email address" />
-                    <Form.Text className="text-muted"></Form.Text>
                 </Form.Group>
                     
                 <Form.Group className="mb-3" controlId="number">
                     <Form.Label>Mobile Number</Form.Label>
                     <Form.Control type="number" placeholder="Enter your mobile nummber" />
-                    <Form.Text className="text-muted"></Form.Text>
                 </Form.Group>
 
                 <Form.Group className="mb-3" controlId="formBasicPassword">
@@ -53,9 +49,11 @@ const TeacherForm = () => {
                     <Form.Check type="checkbox" label="Do you aggree to our terms and conditions" />
                 </Form.Group>
                 
-                <Button className="mb-3" variant="dark" type="submit">
-                    Register
-                </Button>
+                <Form.Group>
+                    <Button className="mb-3" variant="dark" type="submit" block="true" >
+                        Register
+                    </Button>
+                </Form.Group>
             </Form>
         </Container>
     );
