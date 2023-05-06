@@ -1,32 +1,31 @@
 import React from "react";
-import Button from "react-bootstrap/Button";
-import Form from "react-bootstrap/Form";
+import {Button, Form, Container, Col, Row} from "react-bootstrap";
 // import Template from "/Components/Template";
 
 const TeacherForm = () => {
     return (
-        <div className="d-flex justify-content-center">
+        <Container className="d-flex justify-content-center">
             {/* <Template /> */}
             <Form>
                 <h1>Register A Teacher</h1>
                 <p>Please enter the details below to register a teacher</p>
                     
-                <div className="row">
-                        <div className="col-sm-6">
-                        <Form.Group className="mb-3" controlId="text">
-                            <Form.Label>Full first names</Form.Label>
-                            <Form.Control type="text" placeholder="Enter full first names" />
-                            <Form.Text className="text-muted"></Form.Text>
-                        </Form.Group>
-                        </div>
-                        <div className="col-sm-6">
-                        <Form.Group className="mb-3" controlId="text">
-                            <Form.Label>Surname</Form.Label>
-                            <Form.Control type="text" placeholder="Enter Surname" />
-                            <Form.Text className="text-muted"></Form.Text>
-                        </Form.Group>
-                        </div>
-                    </div>
+                    <Row>
+                        <Col className="col-sm-6">
+                            <Form.Group className="mb-3" controlId="text">
+                                <Form.Label>Full first names</Form.Label>
+                                <Form.Control type="text" placeholder="Enter full first names" />
+                                <Form.Text className="text-muted"></Form.Text>
+                            </Form.Group>
+                        </Col>
+                        <Col className="col-sm-6">
+                            <Form.Group className="mb-3" controlId="text">
+                                <Form.Label>Surname</Form.Label>
+                                <Form.Control type="text" placeholder="Enter Surname" />
+                                <Form.Text className="text-muted"></Form.Text>
+                            </Form.Group>
+                        </Col>
+                    </Row>
                 
                 <Form.Group className="mb-3" controlId="email">
                     <Form.Label>Email Address</Form.Label>
@@ -58,7 +57,7 @@ const TeacherForm = () => {
                     Register
                 </Button>
             </Form>
-        </div>
+        </Container>
     );
 };
 
