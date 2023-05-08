@@ -11,6 +11,8 @@ Write a summary of your change. Explain why you have made it.
 Make sure you include the issue number with a hash sign # so Github can link this PR to the right issue, like this:
 
 Fixes #1
+## 📸 Screenshots
+Kindly attach screenshots if available
 
 ## Checklist:
 
