@@ -31,7 +31,6 @@ export default function App() {
 					>
 						<MDBIcon fab icon="twitter" />
 					</a>
-
 				</div>
 			</section>
 
