@@ -31,18 +31,7 @@ export default function App() {
 					>
 						<MDBIcon fab icon="twitter" />
 					</a>
-					{/* <a href="" className="me-4 text-reset">
-						<MDBIcon fab icon="google" />
-					</a> */}
-					{/* <a href="" className="me-4 text-reset">
-						<MDBIcon fab icon="instagram" />
-					</a> */}
-					{/* <a href="" className="me-4 text-reset">
-						<MDBIcon fab icon="linkedin" />
-					</a> */}
-					{/* <a href="" className="me-4 text-reset">
-						<MDBIcon fab icon="github" />
-					</a> */}
+
 				</div>
 			</section>
 
