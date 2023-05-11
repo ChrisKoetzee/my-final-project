@@ -9,3 +9,8 @@
 .message:hover {
 	background-color: yellow;
 }
+
+.Card {
+	padding: 20px;
+	margin: 20px 0;
+}
