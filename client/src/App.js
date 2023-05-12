@@ -4,14 +4,19 @@ import About from "./pages/About";
 import Home from "./pages/Home";
 import Footer from "./pages/Footer";
 import TeacherForm from "./pages/TeacherForm";
+import Navbar from "./component/NavBar";
+// import { Router } from "express";
 
 const App = () => (
-	<Routes>
-		<Route path="/" element={<Home />} />
-		<Route path="/about/this/site" element={<About />} />
+	<div>
+		<Navbar />
+		<Routes>
+			<Route path="/" element={<Home />} />
+			<Route path="/about/this/site" element={<About />} />
+			<Route path="/admin/teacher-registration" element={<TeacherForm />} />
+		</Routes>
 		<Footer />
-		<Route path="/admin/teacher-registration" element={<TeacherForm />} />
-	</Routes>
+	</div>
 );
 
 export default App;
