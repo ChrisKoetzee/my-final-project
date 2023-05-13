@@ -1,7 +1,6 @@
 import React, { useEffect, useRef } from "react";
 import { Button, Nav, Navbar, Container, NavDropdown } from "react-bootstrap";
 
-
 function NavBar() {
 	const headerRef = useRef(null);
 	const menuRef = useRef(null);
@@ -37,60 +36,66 @@ function NavBar() {
 					<div ref={menuRef} className="menu">
 						<Navbar expand="md" className="p-0">
 							<Container>
-								<Navbar.Brand href="#home" className="mr-auto">Douglas Road Primary School</Navbar.Brand>
-									<Navbar.Toggle
-										aria-controls="basic-navbar-nav"
-										className="border-0"
-									/>
-									<Navbar.Collapse id="basic-navbar-nav" className="justify-content-center" fluid="md">
-										<Nav className="mr-auto">
+								<Navbar.Brand href="#home" className="mr-auto">
+									Douglas Road Primary School
+								</Navbar.Brand>
+								<Navbar.Toggle
+									aria-controls="basic-navbar-nav"
+									className="border-0"
+								/>
+								<Navbar.Collapse
+									id="basic-navbar-nav"
+									className="justify-content-center"
+									fluid="md"
+								>
+									<Nav className="mr-auto">
+										<Nav.Link className="text-black font-weight-600" href="#">
+											School Info
+										</Nav.Link>
+										<Nav.Link className="text-black font-weight-600" href="#">
+											Student Info
+										</Nav.Link>
+										<Nav.Link className="text-black font-weight-600" href="#">
+											NewsLetter
+										</Nav.Link>
+										<Nav.Link className="text-black font-weight-600" href="#">
+											Donation
+										</Nav.Link>
+										<NavDropdown
+											title="Register"
+											id="navbarScrollingDropdown"
+											className="text-black font-weight-600"
+											href="#"
+										>
 											<Nav.Link
-												className="text-black font-weight-600"
-												href="#"
+												onClick={() =>
+													(window.location.href = "/admin/teacher-registration")
+												}
+												onMouseOver={(e) =>
+													(e.target.style.backgroundColor = "#ccc")
+												}
+												onMouseOut={(e) =>
+													(e.target.style.backgroundColor = "transparent")
+												}
 											>
-												School Info
+												Register a teacher
 											</Nav.Link>
 											<Nav.Link
-												className="text-black font-weight-600"
-												href="#"
+												onClick={() =>
+													(window.location.href = "admin/student-registration")
+												}
+												onMouseOver={(e) =>
+													(e.target.style.backgroundColor = "#ccc")
+												}
+												onMouseOut={(e) =>
+													(e.target.style.backgroundColor = "transparent")
+												}
 											>
-												Student Info
+												Register a student
 											</Nav.Link>
-											<Nav.Link
-												className="text-black font-weight-600"
-												href="#"
-											>
-												NewsLetter
-											</Nav.Link>
-											<Nav.Link
-												className="text-black font-weight-600"
-												href="#"
-											>
-												Donation
-											</Nav.Link>
-											<NavDropdown 
-												title="Register" 
-												id="navbarScrollingDropdown" 
-												className="text-black font-weight-600" 
-												href="#"
-												>
-												<Nav.Link 
-													onClick={() => window.location.href="/admin/teacher-registration"}
-													onMouseOver={(e) => e.target.style.backgroundColor = '#ccc'}
-          											onMouseOut={(e) => e.target.style.backgroundColor = 'transparent'}
-													>
-														Register a teacher
-												</Nav.Link>
-												<Nav.Link 
-													onClick={() => window.location.href="#"}
-													onMouseOver={(e) => e.target.style.backgroundColor = '#ccc'}
-          											onMouseOut={(e) => e.target.style.backgroundColor = 'transparent'}
-													>
-														Register a student
-												</Nav.Link>
-											</NavDropdown>
-										</Nav>
-									</Navbar.Collapse>
+										</NavDropdown>
+									</Nav>
+								</Navbar.Collapse>
 							</Container>
 						</Navbar>
 					</div>
@@ -98,13 +103,13 @@ function NavBar() {
 
 					{/* Menu Right */}
 					<div className="d-flex align-items-center gap-4">
-					<Button variant="outline-dark">Login</Button>
-						<span
+						<Button
 							onClick={toggleMenu}
+							variant="outline-dark"
 							className="text-2xl text-smallTextColor d-md-none cursor-pointer"
 						>
 							<i className="ri-menu-line"></i>
-						</span>
+						</Button>
 					</div>
 				</div>
 			</div>

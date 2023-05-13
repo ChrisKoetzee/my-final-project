@@ -14,7 +14,10 @@ const TeacherForm = () => {
 						<Col xs={12} sm={6}>
 							<Form.Group className="mb-3" controlId="text">
 								<Form.Label>Full first names</Form.Label>
-								<Form.Control type="text" placeholder="Enter full first names" />
+								<Form.Control
+									type="text"
+									placeholder="Enter full first names"
+								/>
 							</Form.Group>
 						</Col>
 						<Col xs={12} sm={6}>
@@ -32,7 +35,10 @@ const TeacherForm = () => {
 
 					<Form.Group className="mb-3" controlId="number">
 						<Form.Label>Mobile Number</Form.Label>
-						<Form.Control type="number" placeholder="Enter your mobile nummber" />
+						<Form.Control
+							type="number"
+							placeholder="Enter your mobile nummber"
+						/>
 					</Form.Group>
 
 					<Form.Group className="mb-3" controlId="formBasicPassword">
@@ -60,7 +66,6 @@ const TeacherForm = () => {
 				</Form>
 			</Container>
 		</Template>
-		
 	);
 };
 
