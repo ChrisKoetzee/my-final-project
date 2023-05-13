@@ -7,8 +7,8 @@ router.post("/", async (req, res) => {
 	try {
 		const { fullNames, surname, email, phoneNumber, password } = req.body;
 		const insertQuery =
-			"INSERT INTO teachers (fullNames, surname, email, phoneNumber, password) VALUES ($1, $2, $3, $4) RETURNING *";
-		const values = [fullNames, surname, email, phoneNumber];
+			"INSERT INTO teachers (fullNames, surname, email, phoneNumber, password) VALUES ($1, $2, $3, $4, $5) RETURNING *";
+		const values = [fullNames, surname, email, phoneNumber, password];
 		const result = await query.query(insertQuery, values);
 		res.status(200).json(result.rows[0]);
 	} catch (error) {
