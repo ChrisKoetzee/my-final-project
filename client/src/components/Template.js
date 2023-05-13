@@ -1,11 +1,12 @@
 import React from "react";
-import Navbar from "./Navbar";
+import Navbar from "./NavBar";
 import Footer from "./Footer";
 
-const Template = () => {
+const Template = (props) => {
     return (
         <div>
             <Navbar />
+                {props.children}
             <Footer />
         </div>
     );
