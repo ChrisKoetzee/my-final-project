@@ -2,6 +2,7 @@ import express from "express";
 
 import apiRouter from "./api";
 import studentRouter from "./student";
+import teacherRouter from "./teacher";
 import config from "./utils/config";
 import {
 	clientRouter,
@@ -13,6 +14,7 @@ import {
 
 const apiRoot = "/api";
 const studentRoot = "/api/student";
+const teacherRoot = "/api/teacher";
 
 const app = express();
 
@@ -27,9 +29,11 @@ if (config.production) {
 
 app.use(apiRoot, apiRouter);
 app.use(studentRoot, studentRouter);
+app.use(teacherRoot, teacherRouter);
 app.use("/health", (_, res) => res.sendStatus(200));
 app.use(clientRouter(apiRoot));
 app.use(clientRouter(studentRoot));
+app.use(clientRouter(teacherRoot));
 
 app.use(logErrors());
 
