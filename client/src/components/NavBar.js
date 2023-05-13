@@ -103,13 +103,16 @@ function NavBar() {
 
 					{/* Menu Right */}
 					<div className="d-flex align-items-center gap-4">
-						<Button
+						<Button onClick={toggleMenu} variant="outline-dark">
+							Login
+						</Button>
+						<Container
 							onClick={toggleMenu}
-							variant="outline-dark"
+							onKeyDown={toggleMenu}
 							className="text-2xl text-smallTextColor d-md-none cursor-pointer"
 						>
 							<i className="ri-menu-line"></i>
-						</Button>
+						</Container>
 					</div>
 				</div>
 			</div>
