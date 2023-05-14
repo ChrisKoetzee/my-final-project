@@ -6,11 +6,13 @@ import TeacherForm from "./pages/TeacherForm";
 // import { Router } from "express";
 
 const App = () => (
-	<Routes>
-		<Route path="/" element={<Home />} />
-		<Route path="/about/this/site" element={<About />} />
-		<Route path="/admin/teacher-registration" element={<TeacherForm />} />
-	</Routes>
+	<div>
+		<Routes>
+			<Route path="/" element={<Home />} />
+			<Route path="/about/this/site" element={<About />} />
+			<Route path="/admin/teacher-registration" element={<TeacherForm />} />
+		</Routes>
+	</div>
 );
 
 export default App;

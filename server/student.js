@@ -8,7 +8,8 @@ router.post("/table", (req, res) => {
 		.query(
 			"CREATE TABLE IF NOT EXISTS students (id serial PRIMARY KEY, fullNames VARCHAR(50) NOT NULL, surname VARCHAR(50) NOT NULL, dateOfBirth DATE NOT NULL, email VARCHAR(150) NOT NULL, phoneNumber INTEGER  NOT NULL, gender VARCHAR(6) passwordStudent VARCHAR (10))"
 		)
-		.then((result) => res.status(200).json(result.command));
+		.then((result) => res.status(200).json(result.command))
+		.catch((error) => res.status(400).send(error));
 });
 router.post("/new", (req, res) => {
 	const {
@@ -64,7 +65,7 @@ router.delete("/:id", (req, res) => {
 	query.query("DELETE FROM students WHERE id=$1", [id]).then(() => {
 		query.query("COMMIT", (err) => {
 			if (err) {
-				res.send(400).json(err);
+				res.send(400).json(err.stack + "Error committing delete");
 			} else {
 				res.status(200).json({ error: "Successfully removed" });
 			}
@@ -83,14 +84,17 @@ router.put("/:id", (req, res) => {
 		.then(() => {
 			query.query("COMMIT", (err) => {
 				if (err) {
-					res.send(400).json(err);
+					res.send(400).json(err.stack + "Error in update of details");
 				} else {
 					res.send(200).json({ message: "Student details Updated" });
 				}
 			});
 		})
 		.catch((error) => {
-			query.query("ROLLBACK", () => {
+			query.query("ROLLBACK", (err) => {
+				if (err) {
+					res.status(400).json("Rolling back the transaction" + err.stack);
+				}
 				res.status(500).json(error);
 			});
 		});

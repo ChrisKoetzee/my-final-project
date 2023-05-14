@@ -12,22 +12,4 @@ router.get("/", (_, res) => {
 	res.json({ message: "Hello, world!" });
 });
 
-// router.post("/login", (req, res) => {
-// 	const { email, password } = req.body;
-
-// 	const user = Users.find((user) => user.email === email);
-
-// 	if (!user) {
-// 		return res.status(400).json({ error: "Invalid credentials" });
-// 	}
-
-// 	if (user.password !== password) {
-// 		return res.status(400).json({ error: "Invalid credentials" });
-// 	}
-
-// 	const payload = { id: user.id };
-// 	const token = jwt.sign(payload, JWT_SECRET, { expiresIn: "30m" });
-// 	res.json({ token });
-// });//*css*/`
-
 export default router;
