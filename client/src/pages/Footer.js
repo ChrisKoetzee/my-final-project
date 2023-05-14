@@ -10,8 +10,8 @@ import {
 export default function App() {
 	return (
 		<MDBFooter
-			// bgColor=".bg-dark"
 			className="text-center text-lg-start text-muted"
+			style={{ backgroundColor: "#0f172a" }}
 		>
 			<section className="d-flex justify-content-center justify-content-lg-space-evenly p-4 border-bottom">
 				<div className="me-5 d-none d-lg-block">
@@ -48,7 +48,7 @@ export default function App() {
 						<MDBCol md="2" lg="2" xl="2" className="mx-auto mb-4">
 							<h6 className="text-uppercase fw-bold mb-4">Registrations</h6>
 							<p>
-								<a href="./pages/TeacherForm" className="text-reset">
+								<a href="admin/teacher-registration" className="text-reset">
 									Teacher Registration
 								</a>
 							</p>
@@ -57,16 +57,6 @@ export default function App() {
 									Student Registration
 								</a>
 							</p>
-							{/* <p>
-								<a href="#!" className="text-reset">
-									Vue
-								</a>
-							</p>
-							<p>
-								<a href="#!" className="text-reset">
-									Laravel
-								</a>
-							</p> */}
 						</MDBCol>
 
 						<MDBCol md="3" lg="2" xl="2" className="mx-auto mb-4">
