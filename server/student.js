@@ -62,10 +62,8 @@ router.get("/:id", (req, res) => {
 router.delete("/:id", (req, res) => {
 	const id = req.params.id;
 	query.query("DELETE FROM students WHERE id=$1", [id]).then(() => {
-
 		query.query("COMMIT", () => {
 			res.status(200).json({ error: "Successfully removed" });
-
 		});
 	});
 });
