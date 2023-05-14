@@ -1,7 +1,6 @@
 import React, { useEffect, useRef } from "react";
 import { Button, Nav, Navbar } from "react-bootstrap";
 
-
 function NavBar() {
 	const headerRef = useRef(null);
 	const menuRef = useRef(null);
@@ -48,28 +47,16 @@ function NavBar() {
 							/>
 							<Navbar.Collapse id="basic-navbar-nav">
 								<Nav className="ml-auto">
-									<Nav.Link
-										className="text-black font-weight-600"
-										href="#"
-									>
+									<Nav.Link className="text-black font-weight-600" href="#">
 										School Info
 									</Nav.Link>
-									<Nav.Link
-										className="text-black font-weight-600"
-										href="#"
-									>
+									<Nav.Link className="text-black font-weight-600" href="#">
 										Student Info
 									</Nav.Link>
-									<Nav.Link
-										className="text-black font-weight-600"
-										href="#"
-									>
+									<Nav.Link className="text-black font-weight-600" href="#">
 										NewsLetter
 									</Nav.Link>
-									<Nav.Link
-										className="text-black font-weight-600"
-										href="#"
-									>
+									<Nav.Link className="text-black font-weight-600" href="#">
 										Donation
 									</Nav.Link>
 								</Nav>
@@ -80,23 +67,23 @@ function NavBar() {
 
 					{/* Menu Right */}
 					<div className="d-flex align-items-center gap-4">
-					<Button
-						className="d-flex align-items-center gap-2 font-weight-600 border py-2 px-4 rounded-8px max-h-40px hover:bg-smallTextColor hover:text-white"
-						style={{
-							transition: "background-color 0.3s ease-in, color 0.3s ease-in",
-							color: "black",
-							borderColor: "black",
-							backgroundColor: "white",
-						}}
+						<Button
+							className="d-flex align-items-center gap-2 font-weight-600 border py-2 px-4 rounded-8px max-h-40px hover:bg-smallTextColor hover:text-white"
+							style={{
+								transition: "background-color 0.3s ease-in, color 0.3s ease-in",
+								color: "black",
+								borderColor: "black",
+								backgroundColor: "white",
+							}}
 						>
-						Login As Student
+							Login As Student
 						</Button>
-						<span
+						<button
 							onClick={toggleMenu}
 							className="text-2xl text-smallTextColor d-md-none cursor-pointer"
 						>
 							<i className="ri-menu-line"></i>
-						</span>
+						</button>
 					</div>
 				</div>
 			</div>
