@@ -8,20 +8,6 @@ import logger from "./utils/logger";
 const router = Router();
 
 router.get("/", (_, res) => {
-	const Users = [
-		{
-			id: 1,
-			name: "Diego Harera",
-			email: "mydiego@gmail.com",
-			password: "Zxcvbnm2023",
-		},
-		{
-			id: 2,
-			name: "John Due",
-			email: "johndue@gmail.com",
-			password: "Qwerty2023",
-		},
-	];
 	logger.debug("Welcoming everyone...");
 	res.json({ message: "Hello, world!" });
 });
