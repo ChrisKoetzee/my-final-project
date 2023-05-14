@@ -73,7 +73,8 @@ router.delete("/:id", (req, res) => {
 });
 router.put("/:id", (req, res) => {
 	const id = req.params.id;
-	const { fullNames, surname, dateOfBirth, email, phoneNumber, gender } = req.body;
+	const { fullNames, surname, dateOfBirth, email, phoneNumber, gender } =
+		req.body;
 	query
 		.query(
 			"UPDATE students SET fullNames=? surname=? dateOfBirth=?, email=?, phoneNumber=? gender=? WHERE id=$1",
