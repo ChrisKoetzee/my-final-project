@@ -12,7 +12,6 @@ router.post("/", async (req, res) => {
 		const result = await query.query(insertQuery, values);
 		res.status(200).json(result.rows[0]);
 	} catch (error) {
-		console.error(error);
 		res
 			.status(500)
 			.json({ error: "An error occurred while creating the teacher" });
@@ -23,10 +22,9 @@ router.get("/", async (req, res) => {
 	try {
 		const selectQuery =
 			"SELECT id, fullNames, surname, email, phoneNumber FROM teachers";
-			const result = await query.query(selectQuery);
+		const result = await query.query(selectQuery);
 		res.status(200).json(result.rows);
 	} catch (error) {
-		console.error(error);
 		res
 			.status(500)
 			.json({ error: "An error occurred while fetching the teachers" });
@@ -45,7 +43,6 @@ router.get("/:id", async (req, res) => {
 			res.status(200).json(result.rows[0]);
 		}
 	} catch (error) {
-		console.error(error);
 		res
 			.status(500)
 			.json({ error: "An error occurred while fetching the teacher" });
@@ -66,7 +63,6 @@ router.put("/:id", async (req, res) => {
 			res.status(200).json(result.rows[0]);
 		}
 	} catch (error) {
-		console.error(error);
 		res
 			.status(500)
 			.json({ error: "An error occurred while updating the teacher" });
@@ -84,7 +80,6 @@ router.delete("/:id", async (req, res) => {
 			res.status(200).json({ message: "Teacher deleted successfully" });
 		}
 	} catch (error) {
-		console.error(error);
 		res
 			.status(500)
 			.json({ error: "An error occurred while deleting the teacher" });
