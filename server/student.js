@@ -6,10 +6,10 @@ const router = Router();
 router.post("/table", (req, res) => {
 	query
 		.query(
-			"CREATE TABLE IF NOT EXISTS students (id serial PRIMARY KEY, fullNames VARCHAR(50) NOT NULL, surname VARCHAR(50) NOT NULL, dateOfBirth DATE NOT NULL, email VARCHAR(150) NOT NULL, phoneNumber INTEGER  NOT NULL, gender VARCHAR(6), password VARCHAR (10))"
+			"CREATE TABLE IF NOT EXISTS students (id serial PRIMARY KEY, fullNames VARCHAR(50) NOT NULL, surname VARCHAR(50) NOT NULL, dateOfBirth DATE NOT NULL, email VARCHAR(150) NOT NULL, phoneNumber INTEGER  NOT NULL, gender VARCHAR(6) passwordStudent VARCHAR (10))"
 		)
 		.then((result) => res.status(200).json(result.command))
-		.catch((error) => console.error(error));
+		.catch((error) => res.status(400).send(error));
 });
 router.post("/new", (req, res) => {
 	const {
@@ -22,7 +22,7 @@ router.post("/new", (req, res) => {
 		password,
 	} = req.body;
 	const Query =
-		"INSERT INTO students (fullNames, surname, dateOfBirth, email, phoneNumber, gender, password ) VALUES($1, $2, $3, $4, $5, $6, $7)";
+		"INSERT INTO students (fullNames, surname, dateOfBirth, email, phoneNumber, gender, passwordStudent ) VALUES($1, $2, $3, $4, $5, $6)";
 	query
 		.query(Query, [
 			fullNames,
@@ -65,8 +65,7 @@ router.delete("/:id", (req, res) => {
 	query.query("DELETE FROM students WHERE id=$1", [id]).then(() => {
 		query.query("COMMIT", (err) => {
 			if (err) {
-				console.error("Error commiting delete", err.stack);
-				res.send(400).json(err);
+				res.send(400).json(err.stack + "Error committing delete");
 			} else {
 				res.status(200).json({ error: "Successfully removed" });
 			}
@@ -79,14 +78,13 @@ router.put("/:id", (req, res) => {
 		req.body;
 	query
 		.query(
-			"UPDATE students SET fullNames=$2, surname=$3, dateOfBirth=$4, email=$5, phoneNumber=$6 gender=$7 WHERE id=$1",
+			"UPDATE students SET fullNames=? surname=? dateOfBirth=?, email=?, phoneNumber=? gender=? WHERE id=$1",
 			[id, fullNames, surname, dateOfBirth, email, phoneNumber, gender]
 		)
 		.then(() => {
 			query.query("COMMIT", (err) => {
 				if (err) {
-					console.error("Error in update of details", err.stack);
-					res.send(400).json(err);
+					res.send(400).json(err.stack + "Error in update of details");
 				} else {
 					res.send(200).json({ message: "Student details Updated" });
 				}
@@ -95,7 +93,7 @@ router.put("/:id", (req, res) => {
 		.catch((error) => {
 			query.query("ROLLBACK", (err) => {
 				if (err) {
-					console.error("Rolling back the transaction", err.stack);
+					res.status(400).json("Rolling back the transaction" + err.stack);
 				}
 				res.status(500).json(error);
 			});
