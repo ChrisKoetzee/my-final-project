@@ -1,5 +1,7 @@
 import React, { useEffect, useRef } from "react";
 import { Button, Nav, Navbar, Container, NavDropdown } from "react-bootstrap";
+import { Link } from "react-router-dom";
+import Login from "../pages/Login";
 
 function NavBar() {
 	const headerRef = useRef(null);
@@ -106,9 +108,13 @@ function NavBar() {
 
 					{/* Menu Right */}
 					<div className="d-flex align-items-center gap-4">
+						<Link to={"/login"}>
 						<Button onClick={toggleMenu} variant="outline-dark">
 							Login
 						</Button>
+						</Link>
+					
+						
 						<Container
 							onClick={toggleMenu}
 							onKeyDown={toggleMenu}

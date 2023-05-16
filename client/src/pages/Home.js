@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { Row, Col, Container, Button, Image, Card } from "react-bootstrap";
 import Template from "../components/Template";
+import { Link } from "react-router-dom";
 
 import "./Home.css";
 
@@ -39,6 +40,7 @@ export function Home() {
 									cupidatat non proident, sunt in culpa qui officia deserunt
 									mollit anim id est laborum.
 								</Card.Text>
+								<Link to="student-registration">
 								<Button
 									className="mb-3"
 									variant="dark"
@@ -47,6 +49,8 @@ export function Home() {
 								>
 									Register a new student
 								</Button>
+								</Link>
+							
 							</Card>
 						</Col>
 						<Col xs={12} sm={6}>
