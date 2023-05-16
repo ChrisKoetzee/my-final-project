@@ -46,11 +46,9 @@ export function Home() {
 									variant="dark"
 									type="submit"
 									block="true"
-								>
-									Register a new student
+								>	Register a new student
 								</Button>
-								</Link>						
-							</Card>
+							</Link>	</Card>
 						</Col>
 						<Col xs={12} sm={6}>
 							<Card className="flex-column, p-3">

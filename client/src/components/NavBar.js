@@ -112,8 +112,6 @@ function NavBar() {
 							Login
 						</Button>
 						</Link>
-					
-						
 						<Container
 							onClick={toggleMenu}
 							onKeyDown={toggleMenu}
