@@ -49,8 +49,7 @@ export function Home() {
 								>
 									Register a new student
 								</Button>
-								</Link>
-							
+								</Link>						
 							</Card>
 						</Col>
 						<Col xs={12} sm={6}>

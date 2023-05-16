@@ -1,7 +1,6 @@
 import React, { useEffect, useRef } from "react";
 import { Button, Nav, Navbar, Container, NavDropdown } from "react-bootstrap";
 import { Link } from "react-router-dom";
-import Login from "../pages/Login";
 
 function NavBar() {
 	const headerRef = useRef(null);
