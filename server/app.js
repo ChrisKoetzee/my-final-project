@@ -14,7 +14,7 @@ import {
 
 const apiRoot = "/api";
 const studentRoot = "/api/student";
-const teacherRoot = "/api/teacher";
+const teacherRoot = "/api/teachers";
 
 const app = express();
 

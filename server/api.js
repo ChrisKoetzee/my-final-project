@@ -1,11 +1,9 @@
 import { Router } from "express";
-// import jwt from "jsonwebtoken";
-
 import logger from "./utils/logger";
-// const JWT_SECRET = "Super Secret code....";
-// Demo Database
+import TeacherForm from "../client/src/pages/TeacherForm";
 
 const router = Router();
+router.use("/teachers", TeacherForm)
 
 router.get("/", (_, res) => {
 	logger.debug("Welcoming everyone...");

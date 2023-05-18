@@ -52,7 +52,7 @@ export function Home() {
 						<Col xs={12} sm={6}>
 							<Card className="flex-column, p-3">
 								<Image
-									src="http://surl.li/gztyt"
+									src="https://scontent-cpt1-1.xx.fbcdn.net/v/t39.30808-6/308967485_521389659992173_8483769297812494645_n.jpg?_nc_cat=100&ccb=1-7&_nc_sid=e3f864&_nc_ohc=Bh0PsWjhaHQAX_i4S6c&_nc_ht=scontent-cpt1-1.xx&oh=00_AfA_NsqwBIYnaT1E98tRti0Yfxw-tDGyc1D5e1FMWqgzRQ&oe=6469F0C4"
 									alt="front of school"
 									fluid
 									height="100%"
