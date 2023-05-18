@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { Row, Col, Container, Button, Image, Card } from "react-bootstrap";
 import Template from "../components/Template";
+import { Link } from "react-router-dom";
 
 import "./Home.css";
 
