@@ -41,14 +41,17 @@ export function Home() {
 									mollit anim id est laborum.
 								</Card.Text>
 								<Link to="student-registration">
-								<Button
-									className="mb-3"
-									variant="dark"
-									type="submit"
-									block="true"
-								>	Register a new student
-								</Button>
-							</Link>	</Card>
+									<Button
+										className="mb-3"
+										variant="dark"
+										type="submit"
+										block="true"
+									>
+										{" "}
+										Register a new student
+									</Button>
+								</Link>{" "}
+							</Card>
 						</Col>
 						<Col xs={12} sm={6}>
 							<Card className="flex-column, p-3">
