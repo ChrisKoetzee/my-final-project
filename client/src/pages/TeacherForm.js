@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { Button, Form, Container, Col, Row } from "react-bootstrap";
 import Template from "../components/Template";
 
@@ -12,36 +12,36 @@ const TeacherForm = () => {
 	});
 
 	const handleChange = (e) => {
-		setFormData({...formData, [e.target.name]: e.target.value});
+		setFormData({ ...formData, [e.target.name]: e.target.value });
 	};
 
 	const handleSubmit = async (e) => {
 		e.preventDefault();
-		try{
+		try {
 			const response = await fetch("/api/teacher", {
-				method: 'POST',
+				method: "POST",
 				headers: {
 					"Content-Type": "application/json",
 				},
 				body: JSON.stringify(formData),
 			});
-			if(response.ok) {
+			if (response.ok) {
 				const data = await response.json;
 				console.log(data);
 				// return data;
 			} else {
 				throw new Error("Failed to submit");
 			}
-		} catch(error) {
+		} catch (error) {
 			console.error(error);
 			// return error + ": " + e.target.name + "is already in use";
 		}
-	}
+	};
 
 	return (
 		<Template>
 			<Container className="d-flex justify-content-center" fluid="md">
-				<Form onSubmit = {()=>handleSubmit}>
+				<Form onSubmit={handleSubmit}>
 					<h1>Register A Teacher</h1>
 					<p>Please enter the details below to register a teacher</p>
 
@@ -61,7 +61,7 @@ const TeacherForm = () => {
 						<Col xs={12} sm={6}>
 							<Form.Group className="mb-3" controlId="surname">
 								<Form.Label>Surname</Form.Label>
-								<Form.Control 
+								<Form.Control
 									type="text"
 									name="surname"
 									placeholder="Enter Surname"
@@ -74,8 +74,8 @@ const TeacherForm = () => {
 
 					<Form.Group className="mb-3" controlId="email">
 						<Form.Label>Email Address</Form.Label>
-						<Form.Control 
-							type="text" 
+						<Form.Control
+							type="text"
 							name="email"
 							placeholder="Enter email address"
 							value={formData.email}
@@ -96,9 +96,9 @@ const TeacherForm = () => {
 
 					<Form.Group className="mb-3" controlId="password">
 						<Form.Label>Password</Form.Label>
-						<Form.Control 
+						<Form.Control
 							type="password"
-							name="password" 
+							name="password"
 							placeholder="Password"
 							value={formData.password}
 							onChange={handleChange}

@@ -12,7 +12,6 @@ const App = () => (
 			<Route path="/" element={<Home />} />
 			<Route path="/about/this/site" element={<About />} />
 			<Route path="/admin/teacher-registration" element={<TeacherForm />} />
-
 		</Routes>
 	</div>
 );
