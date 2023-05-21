@@ -18,7 +18,7 @@ const TeacherForm = () => {
 	const handleSubmit = async (e) => {
 		e.preventDefault();
 		try {
-			const response = await fetch("/api/teacher", {
+			const response = await fetch("/api/teachers", {
 				method: "POST",
 				headers: {
 					"Content-Type": "application/json",
