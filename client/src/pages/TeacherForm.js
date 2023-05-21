@@ -1,6 +1,8 @@
 import { useState } from "react";
 import { Button, Form, Container, Col, Row } from "react-bootstrap";
 import Template from "../components/Template";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const TeacherForm = () => {
 	const [formData, setFormData] = useState({
@@ -9,11 +11,18 @@ const TeacherForm = () => {
 		email: "",
 		phoneNumber: "",
 		password: "",
+		checkPassword: "",
 	});
+
+	const [agreeTerms, setAgreeTerms] = useState(false);
+
+	const notify = () => toast.success("Form submitted successfully", {});
 
 	const handleChange = (e) => {
 		setFormData({ ...formData, [e.target.name]: e.target.value });
 	};
+
+	const handleCheckboxChange = (e) => setAgreeTerms(e.target.checked);
 
 	const handleSubmit = async (e) => {
 		e.preventDefault();
@@ -26,15 +35,22 @@ const TeacherForm = () => {
 				body: JSON.stringify(formData),
 			});
 			if (response.ok) {
-				const data = await response.json;
-				console.log(data);
-				// return data;
+				await response.json();
+				setFormData({
+					fullNames: "",
+					surname: "",
+					email: "",
+					phoneNumber: "",
+					password: "",
+					checkPassword: "",
+				});
+				setAgreeTerms(false);
+				notify();
 			} else {
 				throw new Error("Failed to submit");
 			}
 		} catch (error) {
-			console.error(error);
-			// return error + ": " + e.target.name + "is already in use";
+			return error + ": " + e.target.name + "is already in use";
 		}
 	};
 
@@ -107,20 +123,50 @@ const TeacherForm = () => {
 
 					<Form.Group className="mb-3" controlId="checkPassword">
 						<Form.Label>Confirm Password</Form.Label>
-						<Form.Control type="password" placeholder="Confirm Password" />
+						<Form.Control
+							type="password"
+							name="checkPassword"
+							placeholder="Confirm Password"
+							value={formData.checkPassword}
+							onChange={handleChange}
+						/>
 					</Form.Group>
 
 					<Form.Group className="mb-3" controlId="formBasicCheckbox">
 						<Form.Check
 							type="checkbox"
 							label="Do you agree to our terms and conditions"
+							checked={agreeTerms}
+							onChange={handleCheckboxChange}
 						/>
 					</Form.Group>
 
 					<Form.Group>
-						<Button className="mb-3" variant="dark" type="submit" block="true">
+						<Button
+							className="mb-3"
+							variant="dark"
+							type="submit"
+							block="true"
+							style={{
+								width: "100%",
+							}}
+							// onClick={notify}
+							onChange={handleChange}
+						>
 							Register
 						</Button>
+						<ToastContainer
+							position="top-right"
+							autoClose={3000}
+							hideProgressBar={false}
+							newestOnTop={false}
+							closeOnClick
+							rtl={false}
+							pauseOnFocusLoss
+							draggable
+							pauseOnHover
+							theme="dark"
+						/>
 					</Form.Group>
 				</Form>
 			</Container>

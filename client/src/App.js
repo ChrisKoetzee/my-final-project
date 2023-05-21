@@ -5,7 +5,6 @@ import Home from "./pages/Home";
 import TeacherForm from "./pages/TeacherForm";
 import Login from "./pages/Login";
 import StudentRegistration from "./pages/StudentRegistration";
-import MyProfile from "./pages/MyProfile";
 
 // import { Router } from "express";
 const App = () => (
@@ -15,7 +14,6 @@ const App = () => (
 			<Route path="/login" element={<Login />} />
 			<Route path="/student-registration" element={<StudentRegistration />} />
 			<Route path="/about/this/site" element={<About />} />
-			<Route path="/myProfile" element={<MyProfile />} />
 			<Route path="/admin/teacher-registration" element={<TeacherForm />} />
 		</Routes>
 	</div>
