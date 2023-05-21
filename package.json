@@ -81,6 +81,7 @@
 		"morgan": "^1.10.0",
 		"pg": "^8.10.0",
 		"react-bootstrap": "^2.7.4",
+		"react-card-flip": "^1.2.0",
 		"react-icons": "^4.8.0",
 		"winston": "^3.8.2"
 	},

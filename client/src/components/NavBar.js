@@ -35,9 +35,9 @@ function NavBar() {
 					{/* Logo end */}
 					{/* Menu Start */}
 					<div ref={menuRef} className="menu">
-						<Navbar expand="md" className="p-0">
+						<Navbar expand="lg" className="p-0">
 							<Container>
-								<Navbar.Brand href="/home" className="mr-auto">
+								<Navbar.Brand href="/" className="mr-auto">
 									Douglas Road Primary School
 								</Navbar.Brand>
 								<Navbar.Toggle
@@ -98,6 +98,14 @@ function NavBar() {
 												Register a student
 											</Nav.Link>
 										</NavDropdown>
+										<Nav.Link className="text-black font-weight-600" href="/teacher/profile">
+											Teacher profile
+										</Nav.Link>
+										<Nav.Link className="" href="/login">
+											<Button onClick={toggleMenu} variant="outline-dark">
+												Login
+											</Button>
+										</Nav.Link>
 									</Nav>
 								</Navbar.Collapse>
 							</Container>
@@ -107,11 +115,6 @@ function NavBar() {
 
 					{/* Menu Right */}
 					<div className="d-flex align-items-center gap-4">
-						<Link to={"/login"}>
-							<Button onClick={toggleMenu} variant="outline-dark">
-								Login
-							</Button>
-						</Link>
 						<Container
 							onClick={toggleMenu}
 							onKeyDown={toggleMenu}
