@@ -15,9 +15,8 @@ import {
 
 const apiRoot = "/api";
 const studentRoot = "/api/student";
-const teacherRoot = "/api/teacher";
+const teacherRoot = "/api/teachers";
 const subjectsRoot = "/api/subjects";
-
 const app = express();
 
 app.use(express.json());
