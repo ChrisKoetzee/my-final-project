@@ -1,6 +1,7 @@
 import express from "express";
 
 import apiRouter from "./api";
+import loginRouter from "./login"
 import studentRouter from "./student";
 import teacherRouter from "./teacher";
 import config from "./utils/config";
@@ -12,9 +13,15 @@ import {
 	logErrors,
 } from "./utils/middleware";
 
+
+
+
 const apiRoot = "/api";
+const loginRoot = "/api/login";
 const studentRoot = "/api/student";
 const teacherRoot = "/api/teacher";
+
+
 
 const app = express();
 
@@ -28,6 +35,7 @@ if (config.production) {
 }
 
 app.use(apiRoot, apiRouter);
+app.use(loginRoot,loginRouter)
 app.use(studentRoot, studentRouter);
 app.use(teacherRoot, teacherRouter);
 app.use("/health", (_, res) => res.sendStatus(200));
