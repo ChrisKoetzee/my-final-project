@@ -59,10 +59,10 @@ function NavBar() {
 										<Nav.Link className="text-black font-weight-600" href="#">
 											Student Info
 										</Nav.Link>
-										<Nav.Link className="text-black font-weight-600" href="#">
+										<Nav.Link className="text-black font-weight-600" href="/newsletter">
 											NewsLetter
 										</Nav.Link>
-										<Nav.Link className="text-black font-weight-600" href="#">
+										<Nav.Link className="text-black font-weight-600" href="/donation">
 											Donation
 										</Nav.Link>
 										<NavDropdown
@@ -86,7 +86,7 @@ function NavBar() {
 											</Nav.Link>
 											<Nav.Link
 												onClick={() =>
-													(window.location.href = "admin/student-registration")
+													(window.location.href = "/student-registration")
 												}
 												onMouseOver={(e) =>
 													(e.target.style.backgroundColor = "#ccc")

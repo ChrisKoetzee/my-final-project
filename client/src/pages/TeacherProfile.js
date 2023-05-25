@@ -7,7 +7,18 @@ const TeacherProfile = () => {
     const [flip, setFlip] = useState(false);
     return (
         <Template>
-             <h1 className="text-center">Teacher profile</h1>
+            <h1 className="text-center">Teacher profile</h1>
+            <Container>
+				<Button 
+					className="mb-3" 
+					variant="dark" 
+					type="submit" 
+					block="true"
+					style={{
+						width: "100%",
+						height: "50px",
+					}}>Update students grade</Button>
+			</Container>
             <Container className="d-flex justify-content-center">
                 <Row className="align-items-center">
                     <Col xs={12} sm={6}>
