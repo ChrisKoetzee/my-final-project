@@ -1,9 +1,5 @@
 import { Router } from "express";
-// import jwt from "jsonwebtoken";
-
 import logger from "./utils/logger";
-// const JWT_SECRET = "Super Secret code....";
-// Demo Database
 
 const router = Router();
 
