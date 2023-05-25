@@ -4,6 +4,7 @@ import apiRouter from "./api";
 import loginRouter from "./login"
 import studentRouter from "./student";
 import teacherRouter from "./teacher";
+import subjectsRouter from "./subjects";
 import config from "./utils/config";
 import {
 	clientRouter,
@@ -19,10 +20,8 @@ import {
 const apiRoot = "/api";
 const loginRoot = "/api/login";
 const studentRoot = "/api/student";
-const teacherRoot = "/api/teacher";
-
-
-
+const teacherRoot = "/api/teachers";
+const subjectsRoot = "/api/subjects";
 const app = express();
 
 app.use(express.json());
@@ -38,10 +37,12 @@ app.use(apiRoot, apiRouter);
 app.use(loginRoot,loginRouter)
 app.use(studentRoot, studentRouter);
 app.use(teacherRoot, teacherRouter);
+app.use(subjectsRoot, subjectsRouter);
 app.use("/health", (_, res) => res.sendStatus(200));
 app.use(clientRouter(apiRoot));
 app.use(clientRouter(studentRoot));
 app.use(clientRouter(teacherRoot));
+app.use(clientRouter(subjectsRoot));
 
 app.use(logErrors());
 
