@@ -1,17 +1,19 @@
 import React, { useState } from "react";
 import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
-import { toast,ToastContainer } from "react-toastify";
+import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import Template from "../components/Template"
 
 const RegistrationForm = () => {
   const [formData, setFormData] = useState({
-    fullnames: "",
-    surname: "",
-    dateofbirth: "",
-    email: "",
-    phonenumber: "",
-    password: "",
+    fullNames:"",
+    surname:"",
+    gender:"",
+    dateOfBirth:"",
+    email:"",
+    phoneNumber:"",
+    password:"",
   });
 
   const handleInputChange = (event) => {
@@ -36,12 +38,13 @@ const RegistrationForm = () => {
         if (data.message) {
           toast.success("Registration successful");
           setFormData({
-            fullnames: "",
-            surname: "",
-            email: "",
-            phonenumber: "",
-            dateofbirth: "",
-            password: "",
+            fullNames:"",
+            surname:"",
+            gender:"",
+            dateOfBirth:"",
+            email:"",
+            phoneNumber:"",
+            password:"",
           });
         } else {
           toast.error("Registration failed");
@@ -54,17 +57,20 @@ const RegistrationForm = () => {
   };
 
   return (
-    <>
+    <Template>
       <h1 style={{ textAlign: "center", marginTop: "3rem" }}>
         Registration Form
       </h1>
-      <Form style={{ width: "50%", margin: "3.5rem auto" }} onSubmit={handleSubmit}>
+      <Form
+        style={{ width: "50%", margin: "3.5rem auto" }}
+        onSubmit={handleSubmit}
+      >
         <Form.Group className="mb-3" controlId="formBasicFullName">
           <Form.Label style={{ fontWeight: "500" }}>Full Name</Form.Label>
           <Form.Control
             type="text"
-            name="fullnames"
-            value={formData.fullnames}
+            name="fullNames"
+            value={formData.fullNames}
             placeholder="Enter your full name"
             onChange={handleInputChange}
           />
@@ -79,12 +85,25 @@ const RegistrationForm = () => {
             onChange={handleInputChange}
           />
         </Form.Group>
+        <Form.Group className="mb-3" controlId="formBasicGender">
+          <Form.Label style={{ fontWeight: "500" }}>Gender</Form.Label>
+          <Form.Control
+            as="select"
+            name="gender"
+            value={formData.gender}
+            onChange={handleInputChange}
+          >
+            <option value="">Select Gender</option>
+            <option value="Male">Male</option>
+            <option value="Female">Female</option>
+          </Form.Control>
+        </Form.Group>
         <Form.Group className="mb-3" controlId="formBasicDateOfBirth">
           <Form.Label style={{ fontWeight: "500" }}>Date of Birth</Form.Label>
           <Form.Control
             type="date"
-            name="dateofbirth"
-            value={formData.dateofbirth}
+            name="dateOfBirth"
+            value={formData.dateOfBirth}
             placeholder="Enter your date of birth"
             onChange={handleInputChange}
           />
@@ -103,8 +122,8 @@ const RegistrationForm = () => {
           <Form.Label style={{ fontWeight: "500" }}>Phone Number</Form.Label>
           <Form.Control
             type="text"
-            name="phonenumber"
-            value={formData.phonenumber}
+            name="phoneNumber"
+            value={formData.phoneNumber}
             placeholder="Enter Phone Number"
             onChange={handleInputChange}
           />
@@ -131,9 +150,9 @@ const RegistrationForm = () => {
         >
           Register
         </Button>
-        <ToastContainer/>
+        <ToastContainer />
       </Form>
-    </>
+    </Template>
   );
 };
 

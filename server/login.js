@@ -1,8 +1,9 @@
 import { Router } from "express";
 import query from "./db.js";
 import jwt from "jsonwebtoken";
-import bcrypt from "bcrypt";
+// import bcrypt from "bcrypt";
 import { authenticateToken } from "./utils/authMiddleware.js";
+const bcrypt = require('bcrypt');
 
 const router = Router();
 
@@ -10,6 +11,7 @@ router.post("/", async (req, res) => {
   try {
     const { email, password } = req.body;
 
+    console.log('Received password:', password); 
     // Check if the user exists
     const result = await query.query(
       "SELECT * FROM students WHERE email = $1",
@@ -18,14 +20,17 @@ router.post("/", async (req, res) => {
 
     const user = result.rows[0];
 
-    console.log(user)
+    
+ 
 
     if (!user) {
       return res.status(401).json({ error: "Invalid credentials" });
     }
 
     // Validate password
-    const isValidPassword = await bcrypt.compare(password, user.password);
+    const isValidPassword = password === user.password;
+
+    console.log("Password:", isValidPassword);
 
     if (!isValidPassword) {
       return res.status(401).json({ error: "Invalid credentials" });

@@ -4,8 +4,11 @@ import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
 import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import Template from "../components/Template";
+import { useNavigate } from "react-router-dom";
 
 const Login = () => {
+  const navigate = useNavigate();
   const [formData, setFormData] = useState({
     email: "",
     password: "",
@@ -21,6 +24,8 @@ const Login = () => {
   const handleSubmit = (event) => {
     event.preventDefault();
 
+    
+
     fetch("/api/login", {
       method: "POST",
       headers: {
@@ -33,6 +38,7 @@ const Login = () => {
         if (data.token) {
           // If login is successful, you can handle the token or perform any necessary actions
           toast.success("Login successful");
+          navigate("/")
         } else {
           toast.error("Login failed. Please check your credentials.");
         }
@@ -44,7 +50,7 @@ const Login = () => {
   };
 
   return (
-    <>
+    <Template>
       <h1 style={{ textAlign: "center", marginTop: "3rem" }}>Log In Form</h1>
       <Form
         style={{ width: "30%", margin: "3.5rem auto" }}
@@ -84,7 +90,7 @@ const Login = () => {
         </Button>
       </Form>
       <ToastContainer position="top-right" autoClose={3000} />
-    </>
+    </Template>
   );
 };
 
