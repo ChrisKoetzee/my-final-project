@@ -28,7 +28,7 @@ export function Home() {
 						<Col xs={12} sm={6}>
 							<Card className="flex-column, p-3">
 								<Card.Title as="h1">
-									Welcome to Douglas Primary School
+									Welcome to Douglas Road Primary School
 								</Card.Title>
 								<Card.Text>
 									Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
@@ -56,7 +56,7 @@ export function Home() {
 						<Col xs={12} sm={6}>
 							<Card className="flex-column, p-3">
 								<Image
-									src="https://scontent-cpt1-1.xx.fbcdn.net/v/t39.30808-6/308967485_521389659992173_8483769297812494645_n.jpg?_nc_cat=100&ccb=1-7&_nc_sid=e3f864&_nc_ohc=Bh0PsWjhaHQAX_i4S6c&_nc_ht=scontent-cpt1-1.xx&oh=00_AfA_NsqwBIYnaT1E98tRti0Yfxw-tDGyc1D5e1FMWqgzRQ&oe=6469F0C4"
+									src="https://scontent-cpt1-1.xx.fbcdn.net/v/t39.30808-6/308967485_521389659992173_8483769297812494645_n.jpg?_nc_cat=100&ccb=1-7&_nc_sid=e3f864&_nc_ohc=piYsq29mr6EAX-nJTeI&_nc_ht=scontent-cpt1-1.xx&oh=00_AfDI-R1dRDaLaukWyuw8b02E9WBSRoKUcWfhfhjwvkyokA&oe=6475CE44"
 									alt="front of school"
 									fluid
 									height="100%"
