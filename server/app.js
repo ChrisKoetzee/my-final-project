@@ -29,7 +29,7 @@ if (config.production) {
 }
 
 app.use(apiRoot, apiRouter);
-app.use(loginRoot,loginRouter);
+app.use(loginRoot, loginRouter);
 app.use(studentRoot, studentRouter);
 app.use(teacherRoot, teacherRouter);
 app.use(subjectsRoot, subjectsRouter);
