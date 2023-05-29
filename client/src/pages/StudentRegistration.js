@@ -3,7 +3,7 @@ import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
 import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import Template from "../components/Template"
+import Template from "../components/Template";
 
 const RegistrationForm = () => {
   const [formData, setFormData] = useState({
