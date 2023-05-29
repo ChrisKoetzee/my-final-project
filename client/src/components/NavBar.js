@@ -59,10 +59,16 @@ function NavBar() {
 										<Nav.Link className="text-black font-weight-600" href="#">
 											Student Info
 										</Nav.Link>
-										<Nav.Link className="text-black font-weight-600" href="/newsletter">
+										<Nav.Link
+											className="text-black font-weight-600"
+											href="/newsletter"
+										>
 											NewsLetter
 										</Nav.Link>
-										<Nav.Link className="text-black font-weight-600" href="/donation">
+										<Nav.Link
+											className="text-black font-weight-600"
+											href="/donation"
+										>
 											Donation
 										</Nav.Link>
 										<NavDropdown
@@ -98,7 +104,10 @@ function NavBar() {
 												Register a student
 											</Nav.Link>
 										</NavDropdown>
-										<Nav.Link className="text-black font-weight-600" href="/teacher/profile">
+										<Nav.Link
+											className="text-black font-weight-600"
+											href="/teacher/profile"
+										>
 											Teacher profile
 										</Nav.Link>
 										<Nav.Link className="" href="/login">
