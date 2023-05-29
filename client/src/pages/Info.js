@@ -26,7 +26,7 @@ const InfoPage = () => {
                 <Card.Body>
                   <Card.Title>Principal</Card.Title>
                 </Card.Body>
-                <Card.Img variant="top" src="https://images.unsplash.com/photo-1497633762265-9d179a990aa6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8c2Nob29sfGVufDB8fDB8fHww&auto=format&fit=crop&w=500&q=60" alt="Rehabilitation" />
+                <Card.Img variant="top" src="https://plus.unsplash.com/premium_photo-1683195788099-0f83ca85ec65?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=6npmm0" alt="Rehabilitation" />
               </Card>
             </Col>
             <Col md={4}>
@@ -34,7 +34,7 @@ const InfoPage = () => {
                 <Card.Body>
                   <Card.Title>Education Support</Card.Title>
                 </Card.Body>
-                <Card.Img variant="top" src="https://images.unsplash.com/photo-1497633762265-9d179a990aa6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8c2Nob29sfGVufDB8fDB8fHww&auto=format&fit=crop&w=500&q=60" alt="Education Support" />
+                <Card.Img variant="top" src="https://images.unsplash.com/photo-1582213782179-e0d53f98f2ca?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80" alt="Education Support" />
               </Card>
             </Col>
             <Col md={4}>
@@ -42,7 +42,7 @@ const InfoPage = () => {
                 <Card.Body>
                   <Card.Title>Parents</Card.Title>
                 </Card.Body>
-                <Card.Img variant="top" src="https://images.unsplash.com/photo-1497633762265-9d179a990aa6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8c2Nob29sfGVufDB8fDB8fHww&auto=format&fit=crop&w=500&q=60" alt="Bursary Assistance" />
+                <Card.Img variant="top" src="https://cdn.24.co.za/files/Cms/General/d/8825/c9c0587b0d9d434eb4b373f39200d00f.jpg" alt="Bursary Assistance" />
               </Card>
             </Col>
           </Row>
