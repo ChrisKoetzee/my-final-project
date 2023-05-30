@@ -52,7 +52,7 @@ function NavBar() {
 									<Nav className="mr-auto">
 										<Nav.Link
 											className="text-black font-weight-600"
-											href="/about/this/site"
+											href="/info"
 										>
 											School Info
 										</Nav.Link>
