@@ -31,14 +31,22 @@ export function Home() {
 									Welcome to Douglas Road Primary School
 								</Card.Title>
 								<Card.Text>
-									Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-									do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-									Ut enim ad minim veniam, quis nostrud exercitation ullamco
-									laboris nisi ut aliquip ex ea commodo consequat. Duis aute
-									irure dolor in reprehenderit in voluptate velit esse cillum
-									dolore eu fugiat nulla pariatur. Excepteur sint occaecat
-									cupidatat non proident, sunt in culpa qui officia deserunt
-									mollit anim id est laborum.
+									<h2>Our vision</h2>
+									<p>
+										To create an educational environment and to develop the
+										skills of our learners in order for them to play a
+										meaningful role in society. Our educators are to be kept
+										abreast of new developments in education on order that our
+										learners gain excellence in education.
+									</p>
+									<h2>Our mission</h2>
+									<p>
+										To strive to maintain a high level of education by educating
+										our children to become responsible in order that they my
+										play a meaningful role in society as well as to provide the
+										staff with the opportunity for professional growth enabling
+										them to deliver the best possible education to our learners.
+									</p>
 								</Card.Text>
 								<Link to="student-registration">
 									<Button
