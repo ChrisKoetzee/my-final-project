@@ -10,16 +10,18 @@ const Comments = () => (
 			}}
 		/>
 		<Button
-			className="mb-3"
+			className="d-flex justify-content-center, mb-3"
+			fluid="md"
 			variant="dark"
 			type="submit"
 			block="true"
 			style={{
+				marginTop: "1rem",
 				width: "100%",
 				height: "30%",
 			}}
 		>
-			Submit Comment
+			Submit
 		</Button>
 	</FloatingLabel>
 );

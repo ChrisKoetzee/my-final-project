@@ -1,8 +1,8 @@
 import Template from "../components/Template";
 import { Container, Col, Row, Table, Card } from "react-bootstrap";
 import SelectStudent from "../components/SelectStudent";
-import Comments from "../components/Comments";
 import UpdateGrade from "../components/UpdateGrade";
+import ModalPopUp from "../components/ModalPopUp";
 
 const TeacherProfile = () => {
 	return (
@@ -21,7 +21,6 @@ const TeacherProfile = () => {
 							<Card.Title as="h2">Select a Student</Card.Title>
 							<SelectStudent />
 						</Card>
-						<Comments />
 					</Col>
 					<Col xs={12} sm={8} md={8}>
 						<Table striped bordered hover variant="primary">
@@ -30,10 +29,7 @@ const TeacherProfile = () => {
 									<th>#</th>
 									<th>Subject</th>
 									<th>Expected pass mark</th>
-									<th>1st term</th>
-									<th>2nd term</th>
-									<th>3rd term</th>
-									<th>4th term</th>
+									<th>Student grade</th>
 									<th>Comments</th>
 								</tr>
 							</thead>
@@ -44,17 +40,11 @@ const TeacherProfile = () => {
 									<td>50%</td>
 									<td></td>
 									<td></td>
-									<td></td>
-									<td></td>
-									<td></td>
 								</tr>
 								<tr>
 									<td>2</td>
 									<td>Afrikaans</td>
 									<td>50%</td>
-									<td></td>
-									<td></td>
-									<td></td>
 									<td></td>
 									<td></td>
 								</tr>
@@ -64,17 +54,11 @@ const TeacherProfile = () => {
 									<td>50%</td>
 									<td></td>
 									<td></td>
-									<td></td>
-									<td></td>
-									<td></td>
 								</tr>
 								<tr>
 									<td>4</td>
 									<td>N.S. Technology</td>
 									<td>50%</td>
-									<td></td>
-									<td></td>
-									<td></td>
 									<td></td>
 									<td></td>
 								</tr>
@@ -84,17 +68,11 @@ const TeacherProfile = () => {
 									<td>50%</td>
 									<td></td>
 									<td></td>
-									<td></td>
-									<td></td>
-									<td></td>
 								</tr>
 								<tr>
 									<td>6</td>
 									<td>Life orientation</td>
 									<td>50%</td>
-									<td></td>
-									<td></td>
-									<td></td>
 									<td></td>
 									<td></td>
 								</tr>
@@ -104,17 +82,11 @@ const TeacherProfile = () => {
 									<td>50%</td>
 									<td></td>
 									<td></td>
-									<td></td>
-									<td></td>
-									<td></td>
 								</tr>
 								<tr>
 									<td>8</td>
 									<td>Arts and culture</td>
 									<td>50%</td>
-									<td></td>
-									<td></td>
-									<td></td>
 									<td></td>
 									<td></td>
 								</tr>
@@ -124,6 +96,7 @@ const TeacherProfile = () => {
 				</Row>
 			</Container>
 			<UpdateGrade />
+			<ModalPopUp />
 		</Template>
 	);
 };

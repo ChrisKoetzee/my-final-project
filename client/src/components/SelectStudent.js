@@ -1,23 +1,9 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { Dropdown, Container, Button } from "react-bootstrap";
 
 const SelectStudent = () => {
 	const [selectedStudent, setSelectedStudent] = useState("");
 	const [selectedGrade, setSelectedGrade] = useState("");
-	const [studentGrades, setStudentGrades] = useState([]);
-
-	useEffect(() => {
-		if (selectedStudent !== "") {
-			fetch(`/ENDPOINT/students/${selectedStudent}/grades`)
-				.then((response) => response.json())
-				.then((data) => setStudentGrades(data))
-				.catch((error) => error);
-		}
-	}, [selectedStudent]);
-
-	const handleStudentChange = (student) => {
-		setSelectedStudent(student);
-	};
 
 	return (
 		<Container>
@@ -88,3 +74,18 @@ const SelectStudent = () => {
 };
 
 export default SelectStudent;
+
+// const [studentGrades, setStudentGrades] = useState([]);
+
+// 	useEffect(() => {
+// 		if (selectedStudent !== "") {
+// 			fetch(`/ENDPOINT/students/${selectedStudent}/grades`)
+// 				.then((response) => response.json())
+// 				.then((data) => setStudentGrades(data))
+// 				.catch((error) => error);
+// 		}
+// 	}, [selectedStudent]);
+
+// 	const handleStudentChange = (student) => {
+// 		setSelectedStudent(student);
+// 	};
