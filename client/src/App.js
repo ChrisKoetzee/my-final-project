@@ -8,12 +8,14 @@ import StudentRegistration from "./pages/StudentRegistration";
 import TeacherProfile from "./pages/TeacherProfile";
 import Newsletter from "./pages/NewsLetter";
 import Donation from "./pages/Donation";
+import Info from "./pages/Info";
 
 const App = () => (
 	<div>
 		<Routes>
 			<Route path="/" element={<Home />} />
 			<Route path="/login" element={<Login />} />
+			<Route path="/info" element={<Info />} />
 			<Route path="/student-registration" element={<StudentRegistration />} />
 			<Route path="/about/this/site" element={<About />} />
 			<Route path="/admin/teacher-registration" element={<TeacherForm />} />
