@@ -7,24 +7,28 @@ function NavBar() {
 	const menuRef = useRef(null);
 
 	const stickyHeaderFunc = () => {
-		window.addEventListener("scroll", () => {
-			if (
-				document.body.scrollTop > 80 ||
-				document.documentElement.scrollTop > 80
-			) {
-				headerRef.current.classList.add("sticky_header");
-			} else {
-				headerRef.current.classList.remove("sticky_header");
-			}
-		});
+		if (
+			document.body.scrollTop > 80 ||
+			document.documentElement.scrollTop > 80
+		) {
+			headerRef.current.classList.add("sticky_header");
+		} else {
+			headerRef.current.classList.remove("sticky_header");
+		}
 	};
 
 	const toggleMenu = () => menuRef.current.classList.toggle("show__menu");
 
 	useEffect(() => {
-		stickyHeaderFunc();
+		const handleScroll = () => {
+			stickyHeaderFunc();
+		};
 
-		return () => window.removeEventListener("scroll", stickyHeaderFunc);
+		window.addEventListener("scroll", handleScroll);
+
+		return () => {
+			window.removeEventListener("scroll", handleScroll);
+		};
 	}, []);
 
 	return (
@@ -37,7 +41,7 @@ function NavBar() {
 					<div ref={menuRef} className="menu">
 						<Navbar expand="md" className="p-0">
 							<Container>
-								<Navbar.Brand href="/" className="mr-auto">
+								<Navbar.Brand as={Link} to="/" className="mr-auto">
 									Douglas Road Primary School
 								</Navbar.Brand>
 								<Navbar.Toggle
@@ -52,7 +56,8 @@ function NavBar() {
 									<Nav className="mr-auto">
 										<Nav.Link
 											className="text-black font-weight-600"
-											href="/info"
+											as={Link}
+											to="/about/this/site"
 										>
 											School Info
 										</Nav.Link>
