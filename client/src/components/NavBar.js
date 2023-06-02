@@ -1,6 +1,5 @@
 import React, { useEffect, useRef } from "react";
 import { Button, Nav, Navbar, Container, NavDropdown } from "react-bootstrap";
-import { Link } from "react-router-dom";
 
 function NavBar() {
 	const headerRef = useRef(null);
@@ -39,7 +38,7 @@ function NavBar() {
 					{/* Logo end */}
 					{/* Menu Start */}
 					<div ref={menuRef} className="menu">
-						<Navbar expand="md" className="p-0">
+						<Navbar expand="lg" className="p-0">
 							<Container>
 								<Navbar.Brand as={Link} to="/" className="mr-auto">
 									Douglas Road Primary School
@@ -64,10 +63,16 @@ function NavBar() {
 										<Nav.Link className="text-black font-weight-600" href="#">
 											Student Info
 										</Nav.Link>
-										<Nav.Link className="text-black font-weight-600" href="#">
+										<Nav.Link
+											className="text-black font-weight-600"
+											href="/newsletter"
+										>
 											NewsLetter
 										</Nav.Link>
-										<Nav.Link className="text-black font-weight-600" href="#">
+										<Nav.Link
+											className="text-black font-weight-600"
+											href="/donation"
+										>
 											Donation
 										</Nav.Link>
 										<NavDropdown
@@ -91,7 +96,7 @@ function NavBar() {
 											</Nav.Link>
 											<Nav.Link
 												onClick={() =>
-													(window.location.href = "admin/student-registration")
+													(window.location.href = "/student-registration")
 												}
 												onMouseOver={(e) =>
 													(e.target.style.backgroundColor = "#ccc")
@@ -103,6 +108,17 @@ function NavBar() {
 												Register a student
 											</Nav.Link>
 										</NavDropdown>
+										<Nav.Link
+											className="text-black font-weight-600"
+											href="/teacher/profile"
+										>
+											Teacher profile
+										</Nav.Link>
+										<Nav.Link className="" href="/login">
+											<Button onClick={toggleMenu} variant="outline-dark">
+												Login
+											</Button>
+										</Nav.Link>
 									</Nav>
 								</Navbar.Collapse>
 							</Container>
@@ -112,11 +128,6 @@ function NavBar() {
 
 					{/* Menu Right */}
 					<div className="d-flex align-items-center gap-4">
-						<Link to={"/login"}>
-							<Button onClick={toggleMenu} variant="outline-dark">
-								Login
-							</Button>
-						</Link>
 						<Container
 							onClick={toggleMenu}
 							onKeyDown={toggleMenu}
