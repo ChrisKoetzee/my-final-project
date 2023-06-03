@@ -40,7 +40,7 @@ function NavBar() {
 					<div ref={menuRef} className="menu">
 						<Navbar expand="lg" className="p-0 background grey">
 							<Container>
-								<Navbar.Brand to="/" className="mr-auto">
+								<Navbar.Brand className="mr-auto" href="/">
 									Douglas Road Primary School
 								</Navbar.Brand>
 								<Navbar.Toggle
@@ -55,7 +55,7 @@ function NavBar() {
 									<Nav className="mr-auto">
 										<Nav.Link
 											className="text-black font-weight-600"
-											to="/about/this/site"
+											href="/info"
 										>
 											School Info
 										</Nav.Link>
