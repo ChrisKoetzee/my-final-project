@@ -38,9 +38,9 @@ function NavBar() {
 					{/* Logo end */}
 					{/* Menu Start */}
 					<div ref={menuRef} className="menu">
-						<Navbar expand="lg" className="p-0">
+						<Navbar expand="lg" className="p-0 background grey">
 							<Container>
-								<Navbar.Brand as={Link} to="/" className="mr-auto">
+								<Navbar.Brand to="/" className="mr-auto">
 									Douglas Road Primary School
 								</Navbar.Brand>
 								<Navbar.Toggle
@@ -55,7 +55,6 @@ function NavBar() {
 									<Nav className="mr-auto">
 										<Nav.Link
 											className="text-black font-weight-600"
-											as={Link}
 											to="/about/this/site"
 										>
 											School Info
