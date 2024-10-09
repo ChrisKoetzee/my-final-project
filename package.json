@@ -86,7 +86,7 @@
 		"ls": "^0.2.1",
 		"mdb-react-ui-kit": "^6.0.0",
 		"morgan": "^1.10.0",
-		"npm": "^9.6.7",
+		"npm": "^10.9.0",
 		"pg": "^8.10.0",
 		"react-bootstrap": "^2.7.4",
 		"react-card-flip": "^1.2.0",
