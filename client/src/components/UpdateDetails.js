@@ -1,8 +1,8 @@
 import { useState } from "react";
 import { Button, Container } from "react-bootstrap";
-import ModalPopUp from "./ModalPopUp";
+import UpdateModal from "./UpdateModal";
 
-const UpdateGrade = () => {
+const UpdateDetails = () => {
 	const [modalShow, setModalShow] = useState(false);
 
 	return (
@@ -20,9 +20,9 @@ const UpdateGrade = () => {
 			>
 				Update students grade
 			</Button>
-			<ModalPopUp show={modalShow} onHide={() => setModalShow(false)} />
+			<UpdateModal show={modalShow} onHide={() => setModalShow(false)} />
 		</Container>
 	);
 };
 
-export default UpdateGrade;
+export default UpdateDetails;

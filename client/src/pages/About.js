@@ -1,6 +1,6 @@
 import Template from "../components/Template";
 
-const About = () => (
+const StudentProfile = () => (
 	<Template>
 		<main role="main">
 			<div>
@@ -15,4 +15,4 @@ const About = () => (
 	</Template>
 );
 
-export default About;
+export default StudentProfile;

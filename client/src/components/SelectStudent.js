@@ -74,18 +74,3 @@ const SelectStudent = () => {
 };
 
 export default SelectStudent;
-
-// const [studentGrades, setStudentGrades] = useState([]);
-
-// 	useEffect(() => {
-// 		if (selectedStudent !== "") {
-// 			fetch(`/ENDPOINT/students/${selectedStudent}/grades`)
-// 				.then((response) => response.json())
-// 				.then((data) => setStudentGrades(data))
-// 				.catch((error) => error);
-// 		}
-// 	}, [selectedStudent]);
-
-// 	const handleStudentChange = (student) => {
-// 		setSelectedStudent(student);
-// 	};

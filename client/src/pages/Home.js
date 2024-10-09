@@ -28,24 +28,26 @@ export function Home() {
 						<Col xs={12} sm={6}>
 							<Card className="flex-column, p-3">
 								<Card.Title as="h1">
-									Welcome to Douglas Road Primary School
+									Welcome to Final Project Primary School
 								</Card.Title>
 								<Card.Text>
 									<h2>Our vision</h2>
 									<p>
-										To create an educational environment and to develop the
+										{/* To create an educational environment and to develop the
 										skills of our learners in order for them to play a
 										meaningful role in society. Our educators are to be kept
 										abreast of new developments in education on order that our
-										learners gain excellence in education.
+										learners gain excellence in education. */}
+										Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum
 									</p>
 									<h2>Our mission</h2>
 									<p>
-										To strive to maintain a high level of education by educating
+										{/* To strive to maintain a high level of education by educating
 										our children to become responsible in order that they my
 										play a meaningful role in society as well as to provide the
 										staff with the opportunity for professional growth enabling
-										them to deliver the best possible education to our learners.
+										them to deliver the best possible education to our learners. */}
+										Sapien dolor eu tristique pharetra blandit ridiculus est fermentum. Turpis dui nisi inceptos mauris ad mus sapien risus congue. Varius vehicula sed est nam torquent erat lacinia ex. Vestibulum finibus vehicula magnis fringilla; vulputate consectetur lobortis. Sagittis scelerisque proin aliquam hendrerit metus vel etiam dictum. 
 									</p>
 								</Card.Text>
 								<Link to="student-registration">
@@ -64,7 +66,7 @@ export function Home() {
 						<Col xs={12} sm={6}>
 							<Card className="flex-column, p-3">
 								<Image
-									src="https://scontent-cpt1-1.xx.fbcdn.net/v/t39.30808-6/308967485_521389659992173_8483769297812494645_n.jpg?_nc_cat=100&ccb=1-7&_nc_sid=e3f864&_nc_ohc=piYsq29mr6EAX-nJTeI&_nc_ht=scontent-cpt1-1.xx&oh=00_AfDI-R1dRDaLaukWyuw8b02E9WBSRoKUcWfhfhjwvkyokA&oe=6475CE44"
+									src='https://media.istockphoto.com/id/1756562035/photo/university-campus.jpg?s=2048x2048&w=is&k=20&c=IO7cE5O-O89YVLdjspK9cDHfYf9SmdSlokhpn94NEUs='
 									alt="front of school"
 									fluid
 									height="100%"

@@ -10,8 +10,8 @@ import {
 export default function App() {
 	return (
 		<MDBFooter
-			className="text-center text-lg-start text-muted"
-			style={{ backgroundColor: "#0f172a" }}
+			className="text-center text-lg-start "
+			style={{ backgroundColor: "#0f172a", color:'white'}}
 		>
 			<section className="d-flex justify-content-center justify-content-lg-space-evenly p-4 border-bottom">
 				<div className="me-5 d-none d-lg-block">
@@ -68,17 +68,7 @@ export default function App() {
 							</p>
 							<p>
 								<a href="#!" className="text-reset">
-									Teacher Login
-								</a>
-							</p>
-							<p>
-								<a href="#!" className="text-reset">
-									Student Login
-								</a>
-							</p>
-							<p>
-								<a href="#!" className="text-reset">
-									Help
+									Donations
 								</a>
 							</p>
 						</MDBCol>
@@ -87,14 +77,14 @@ export default function App() {
 							<h6 className="text-uppercase fw-bold mb-4">Contact</h6>
 							<p>
 								<MDBIcon icon="home" className="me-2" />
-								63 Douglas Rd, Wynbergm, Cape Town, 7800
+								1 Final Project Rd, Area, Cape Town
 							</p>
 							<p>
 								<MDBIcon icon="envelope" className="me-3" />
-								douglasroad.prim@wcgschools.gov.za
+								final@project.co.za
 							</p>
 							<p>
-								<MDBIcon icon="phone" className="me-3" /> 021 797 9533
+								<MDBIcon icon="phone" className="me-3" /> 012 345 6789
 							</p>
 						</MDBCol>
 					</MDBRow>
@@ -108,9 +98,9 @@ export default function App() {
 				© 2023 Copyright:
 				<a
 					className="text-reset fw-bold"
-					href="https://douglasroadprimary.co.za"
+					href="#"
 				>
-					Douglas Road Primary School
+					Final Project Primary School
 				</a>
 			</div>
 		</MDBFooter>
