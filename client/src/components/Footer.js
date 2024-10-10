@@ -6,6 +6,7 @@ import {
 	MDBCol,
 	MDBIcon,
 } from "mdb-react-ui-kit";
+// import MonthlyInfo from "../pages/MonthlyInfo";
 
 export default function App() {
 	return (
@@ -53,7 +54,7 @@ export default function App() {
 								</a>
 							</p>
 							<p>
-								<a href="./src/pages/Registraction.js" className="text-reset">
+								<a href="/student-registration" className="text-reset">
 									Student Registration
 								</a>
 							</p>
@@ -62,12 +63,12 @@ export default function App() {
 						<MDBCol md="3" lg="2" xl="2" className="mx-auto mb-4">
 							<h6 className="text-uppercase fw-bold mb-4">Useful links</h6>
 							<p>
-								<a href="#!" className="text-reset">
-									Newsletter
+								<a href="/monthlyInfo" className="text-reset">
+									Monthly Info
 								</a>
 							</p>
 							<p>
-								<a href="#!" className="text-reset">
+								<a href="/donation" className="text-reset">
 									Donations
 								</a>
 							</p>

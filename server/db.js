@@ -40,14 +40,14 @@ import { Pool } from "pg";
 import logger from "./utils/logger";
 import dotenv from 'dotenv';
 
-dotenv.config(); // Load env variables from .env file
+dotenv.config(); 
 
 const pool = new Pool({
-  user: "final_project_2baq_user",
-  host: "dpg-crul1hbv2p9s73etag4g-a.oregon-postgres.render.com", // Replace with the correct hostname
-  database: "final_project_2baq",
+  user: process.env.DB_USER,
+  host: process.env.DB_HOST, 
+  database: process.env.DB_NAME,
   password: process.env.DB_PASSWORD,
-  port: 5432,
+  port: process.env.DB_PORT,
   connectionTimeoutMillis: 10000,
   ssl: { rejectUnauthorized: false },
 });
