@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import {Button, Form, Dropdown} from "react-bootstrap";
+import {Button, Form} from "react-bootstrap";
 import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import Template from "../components/Template";
@@ -14,7 +14,6 @@ const RegistrationForm = () => {
 		phoneNumber: "",
 		password: "",
 	});
-	const [selectedGrade, setSelectedGrade] = useState("");
 
 
 	const handleInputChange = (event) => {
@@ -128,34 +127,6 @@ const RegistrationForm = () => {
 						placeholder="Enter Phone Number"
 						onChange={handleInputChange}
 					/>
-					<Dropdown className="mb-3 w-100">
-                            <Dropdown.Toggle variant="light" id="dropdown-basic" className="w-100 ">
-                                {selectedGrade ? selectedGrade : "Select a Grade"}
-                            </Dropdown.Toggle>
-                            <Dropdown.Menu>
-                                <Dropdown.Item onClick={() => setSelectedGrade("grade 1")}>
-                                    Grade 1
-                                </Dropdown.Item>
-                                <Dropdown.Item onClick={() => setSelectedGrade("grade 2")}>
-                                    Grade 2
-                                </Dropdown.Item>
-                                <Dropdown.Item onClick={() => setSelectedGrade("grade 3")}>
-                                    Grade 3
-                                </Dropdown.Item>
-                                <Dropdown.Item onClick={() => setSelectedGrade("grade 4")}>
-                                    Grade 4
-                                </Dropdown.Item>
-                                <Dropdown.Item onClick={() => setSelectedGrade("grade 5")}>
-                                    Grade 5
-                                </Dropdown.Item>
-                                <Dropdown.Item onClick={() => setSelectedGrade("grade 6")}>
-                                    Grade 6
-                                </Dropdown.Item>
-                                <Dropdown.Item onClick={() => setSelectedGrade("grade 7")}>
-                                    Grade 7
-                                </Dropdown.Item>
-                            </Dropdown.Menu>
-                        </Dropdown>
 				</Form.Group>
 				<Form.Group className="mb-3" controlId="formBasicPassword">
 					<Form.Label style={{ fontWeight: "500" }}>Password</Form.Label>
@@ -164,16 +135,6 @@ const RegistrationForm = () => {
 						name="password"
 						value={formData.password}
 						placeholder="Enter password"
-						onChange={handleInputChange}
-					/>
-				</Form.Group>
-				<Form.Group className="mb-3" controlId="formBasicPassword">
-					<Form.Label style={{ fontWeight: "500" }}>Confirm Password</Form.Label>
-					<Form.Control
-						type="password"
-						name="password"
-						value={formData.password}
-						placeholder="Retype password"
 						onChange={handleInputChange}
 					/>
 				</Form.Group>

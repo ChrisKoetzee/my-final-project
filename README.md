@@ -89,3 +89,9 @@ See the guidance in the [wiki].
 [Webpack]: https://webpack.js.org/
 [wiki]: https://github.com/textbook/starter-kit/wiki
 [Winston]: https://github.com/winstonjs/winston
+
+
+### Installations
+1. npm install 
+2. npm install bootstrap
+3. npm install dotenv
