@@ -30,7 +30,7 @@ export function Home() {
 								<Card.Title as="h1">
 									Welcome to Final Project Primary School
 								</Card.Title>
-								<Card.Text>
+								<Card.Body>
 									<h2>Our vision</h2>
 									<p>
 										{/* To create an educational environment and to develop the
@@ -49,7 +49,7 @@ export function Home() {
 										them to deliver the best possible education to our learners. */}
 										Sapien dolor eu tristique pharetra blandit ridiculus est fermentum. Turpis dui nisi inceptos mauris ad mus sapien risus congue. Varius vehicula sed est nam torquent erat lacinia ex. Vestibulum finibus vehicula magnis fringilla; vulputate consectetur lobortis. Sagittis scelerisque proin aliquam hendrerit metus vel etiam dictum. 
 									</p>
-								</Card.Text>
+								</Card.Body>
 								<Link to="student-registration">
 									<Button
 										className="mb-3"

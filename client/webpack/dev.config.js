@@ -13,6 +13,7 @@ module.exports = merge(common, {
 			"/api": "http://localhost:3100",
 		},
 		static: false,
+		allowedHosts: "all",
 	},
 	mode: "development",
 });
